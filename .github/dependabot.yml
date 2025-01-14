@@ -8,6 +8,11 @@ updates:
     target-branch: main
     labels:
       - dependabot
+    open-pull-requests-limit: 20
+    groups:
+      aws_powertools:
+        patterns:
+          - "aws_powertools_*"
     commit-message:
       prefix: BAU
   - package-ecosystem: "github-actions"
