@@ -82,7 +82,7 @@ dependencies {
 			"org.mockito:mockito-inline:${dependencyVersions.mockito_version}",
 			"org.hamcrest:hamcrest:${dependencyVersions.hamcrest_version}",
 			"com.google.code.gson:gson:${dependencyVersions.gson_version}",
-			"org.json:json:20240303"
+			"org.json:json:20250107"
 
 
 	implementation "io.cucumber:cucumber-java:${dependencyVersions.cucumber_version}",
