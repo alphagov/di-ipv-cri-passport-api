@@ -19,6 +19,7 @@ repositories {
 
 ext {
 	aws_powertools_version = "1.18.0"
+	opentelemetry_version =  "1.46.0"
 	dependencyVersions = [
 
 		// ---------------------------------------------------------
@@ -44,11 +45,17 @@ ext {
 		// ---------------------------------------------------------
 
 		// AWS  aws-lambda-java-libs see https://github.com/aws/aws-lambda-java-libs
-		aws_lambda_core_version            : "1.2.3",
+		aws_lambda_core_version                    : "1.2.3",
 		// Jackson Addons/ needs to track the aws sdk version of jackson
-		jackson_version                    : "2.15.2",
+		jackson_version                            : "2.15.2",
 		// Code weaving (lombok+powertools)
-		aspectjrt_version                  : "1.9.21",
+		aspectjrt_version                          : "1.9.21",
+
+		// opentelemetry-lambda
+		opentelemetry_opentelemetry_api_version		: "${opentelemetry_version}",
+		opentelemetry_instumentation_version        : "2.12.0",
+		opentelemetry_instumentation_alpha_version  : "2.12.0-alpha",
+
 
 		// CRI Apache HTTP Client see https://hc.apache.org/httpcomponents-client-4.5.x/current/httpclient/dependencies.html
 		httpcomponents_core_version        : "4.4.16",
@@ -135,6 +142,7 @@ subprojects {
 	apply plugin: 'org.owasp.dependencycheck'
 
 	repositories {
+		mavenCentral()
 		maven {
 			url 'https://gds.jfrog.io/artifactory/di-allowed-repos'
 		}

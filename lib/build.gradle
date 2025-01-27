@@ -32,6 +32,10 @@ dependencies {
 			"com.fasterxml.jackson.core:jackson-annotations",
 			"com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${dependencyVersions.jackson_version}",
 			"com.fasterxml.jackson.datatype:jackson-datatype-jdk8:${dependencyVersions.jackson_version}",
+			"io.opentelemetry:opentelemetry-api:${dependencyVersions.opentelemetry_opentelemetry_api_version}",
+			"io.opentelemetry.instrumentation:opentelemetry-instrumentation-api:${dependencyVersions.opentelemetry_instumentation_version}",
+			"io.opentelemetry.instrumentation:opentelemetry-aws-sdk-2.2-autoconfigure:${dependencyVersions.opentelemetry_instumentation_alpha_version}",
+			"io.opentelemetry.instrumentation:opentelemetry-apache-httpclient-4.3:${dependencyVersions.opentelemetry_instumentation_alpha_version}",
 			"org.apache.httpcomponents:httpclient:${dependencyVersions.httpcomponents_client_version}",
 			"org.apache.httpcomponents:httpclient:${dependencyVersions.httpcomponents_client_version}"
 

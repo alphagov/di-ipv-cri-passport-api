@@ -1,5 +1,7 @@
 package uk.gov.di.ipv.cri.passport.library.service;
 
+import io.opentelemetry.api.GlobalOpenTelemetry;
+import io.opentelemetry.instrumentation.apachehttpclient.v4_3.ApacheHttpClientTelemetry;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContexts;
@@ -53,7 +55,10 @@ public class ApacheHTTPClientFactoryService {
 
         SSLContext sslContext = sslContextSetup(keystoreTLS, trustStore);
 
-        return HttpClients.custom().setSSLContext(sslContext).build();
+        ApacheHttpClientTelemetry apacheHttpClientTelemetry =
+                ApacheHttpClientTelemetry.builder(GlobalOpenTelemetry.get()).build();
+
+        return apacheHttpClientTelemetry.newHttpClientBuilder().setSSLContext(sslContext).build();
     }
 
     private SSLContext sslContextSetup(KeyStore clientTls, KeyStore caBundle)
