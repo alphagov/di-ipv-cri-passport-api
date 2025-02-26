@@ -988,9 +988,9 @@ Resources:
       AlarmDescription: !Sub Passport ${Environment} - Common API Session Lambda concurrency threshold reached
       ActionsEnabled: true
       AlarmActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       OKActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       InsufficientDataActions: []
       MetricName: ConcurrentExecutions
       Namespace: AWS/Lambda
@@ -1011,9 +1011,9 @@ Resources:
       AlarmDescription: !Sub Passport ${Environment} - Common API Authorization Lambda concurrency threshold reached
       ActionsEnabled: true
       AlarmActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       OKActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       InsufficientDataActions: []
       MetricName: ConcurrentExecutions
       Namespace: AWS/Lambda
@@ -1034,9 +1034,9 @@ Resources:
       AlarmDescription: !Sub Passport ${Environment} - Common API AccessToken Lambda concurrency threshold reached
       ActionsEnabled: true
       AlarmActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       OKActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       InsufficientDataActions: []
       MetricName: ConcurrentExecutions
       Namespace: AWS/Lambda
@@ -1058,9 +1058,9 @@ Resources:
       AlarmDescription: !Sub Passport ${Environment} - CheckPassportFunction Lambda concurrency threshold reached
       ActionsEnabled: true
       AlarmActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       OKActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       InsufficientDataActions: []
       MetricName: ConcurrentExecutions
       Namespace: AWS/Lambda
@@ -1081,9 +1081,9 @@ Resources:
       AlarmDescription: !Sub Passport ${Environment} - IssueCredential Lambda concurrency threshold reached
       ActionsEnabled: true
       AlarmActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       OKActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       InsufficientDataActions: []
       MetricName: ConcurrentExecutions
       Namespace: AWS/Lambda
@@ -1104,9 +1104,9 @@ Resources:
       AlarmDescription: !Sub Passport ${Environment} lambda errors
       ActionsEnabled: true
       AlarmActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       OKActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       InsufficientDataActions: []
       MetricName: Errors
       Namespace: AWS/Lambda
@@ -1125,9 +1125,9 @@ Resources:
       AlarmDescription: !Sub Passport ${Environment} API Gateway 5XX errors
       ActionsEnabled: true
       AlarmActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       OKActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       InsufficientDataActions: []
       Dimensions: []
       DatapointsToAlarm: 3
@@ -1170,9 +1170,9 @@ Resources:
       AlarmDescription: !Sub Passport ${Environment} HMPO certificate is close to expiry (expires within 28 days) see certificate catalogue in confluence for expiries and certificate names
       ActionsEnabled: true
       AlarmActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       OKActions:
-        - !Ref AlarmTopicPassport
+        - !If [ IsProdEnvironment, !Ref AlarmTopicPassport, !ImportValue platform-alarm-critical-alert-topic ]
       InsufficientDataActions: [ ]
       MetricName: hmpo_cert_expiry_metric
       Namespace: !Sub "${CriIdentifier}"
