@@ -63,7 +63,7 @@ ext {
 		hamcrest_version                   : "2.2",
 		mockito_version                    : "5.15.2",
 		wiremock_version                   : "3.0.1",
-		webcompere_version                 : "2.1.6",
+		webcompere_version                 : "2.1.7",
 
 		// testFixturesImplementation
 
