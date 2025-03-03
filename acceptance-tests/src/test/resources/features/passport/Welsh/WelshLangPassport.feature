@@ -26,7 +26,7 @@ Feature: Passport Language Test
 
   @Language-regression
   Scenario:User Selects landed in the passport page and Validate the title and sentences
-    Then I check the page title is Rhowch eich manylion yn union fel maent yn ymddangos ar eich pasbort y DU – Profi pwy ydych chi – GOV.UK
+    Then I check the page title is Rhowch eich manylion yn union fel maent yn ymddangos ar eich pasbort y DU – GOV.UK One Login
     And I see the heading Rhowch eich manylion yn union fel maent yn ymddangos ar eich pasbort y DU
     And I see We will check your details as Byddwn yn gwirio eich manylion gydar DVLA i sicrhau nad yw eich pasbort yrru wedi cael ei chanslo na'i hadrodd fel un sydd ar goll neu wedi ei dwyn.
     And I see sentence Os nad oes gennych basbort y DU neu os na allwch gofio’ch manylion, gallwch brofi pwy ydych chi mewn ffordd arall yn lle hynny.
@@ -108,7 +108,7 @@ Feature: Passport Language Test
 
   @Language-regression
   Scenario:User Selects Passport and landed in passport with page and Page title and sub-text
-    Then I check the page title is Rhowch eich manylion yn union fel maent yn ymddangos ar eich pasbort y DU – Profi pwy ydych chi – GOV.UK
+    Then I check the page title is Rhowch eich manylion yn union fel maent yn ymddangos ar eich pasbort y DU – GOV.UK One Login
     Then I see the heading Rhowch eich manylion yn union fel maent yn ymddangos ar eich pasbort y DU
     And I see sentence Os nad oes gennych basbort y DU neu os na allwch gofio’ch manylion, gallwch brofi pwy ydych chi mewn ffordd arall yn lle hynny.
     And The test is complete and I close the driver
@@ -203,10 +203,10 @@ Feature: Passport Language Test
 
   @Language-regression
   Scenario Outline: Error tab title validation
-    Then I check the page title is Rhowch eich manylion yn union fel maent yn ymddangos ar eich pasbort y DU – Profi pwy ydych chi – GOV.UK
+    Then I check the page title is Rhowch eich manylion yn union fel maent yn ymddangos ar eich pasbort y DU – GOV.UK One Login
     Then User enters data as a <PassportSubject>
     And User clicks on continue
-    Then I check the page title is Gwall: Rhowch eich manylion yn union fel maent yn ymddangos ar eich pasbort y DU – Profi pwy ydych chi – GOV.UK
+    Then I check the page title is Gwall: Rhowch eich manylion yn union fel maent yn ymddangos ar eich pasbort y DU – GOV.UK One Login
     And The test is complete and I close the driver
     Examples:
       |PassportSubject |
@@ -215,7 +215,7 @@ Feature: Passport Language Test
   @Language-regression
   Scenario Outline: Language Title validation
     Given User clicks language toggle and switches to English
-    Then I check the page title is Enter your details exactly as they appear on your UK passport – Prove your identity – GOV.UK
+    Then I check the page title is Enter your details exactly as they appear on your UK passport – GOV.UK One Login
     Then User enters data as a <PassportSubject>
     When User clicks on continue
     Then I navigate to the passport verifiable issuer to check for a Valid response

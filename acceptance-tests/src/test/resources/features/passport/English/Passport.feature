@@ -5,7 +5,7 @@ Feature: Passport Test
     Given I navigate to the IPV Core Stub
     And I click the passport CRI for the testEnvironment
     And I search for passport user number 5 in the Experian table
-    Then I check the page title is Enter your details exactly as they appear on your UK passport – Prove your identity – GOV.UK
+    Then I check the page title is Enter your details exactly as they appear on your UK passport – GOV.UK One Login
     And I assert the url path contains details
     And I set the document checking route
 
@@ -217,17 +217,16 @@ Feature: Passport Test
       | PassportSubjectHappyKenneth | 18     | 1              |
       | PassportSubjectHappyKenneth | 18     | 2              |
 
-    #LIME-1578
-#  @build @staging @integration @stub @uat
-#  Scenario: Check the Unrecoverable error/ Unknown error in Passport CRI
-#    Given I delete the service_session cookie to get the unexpected error
-#    When I check the page title is Sorry, there is a problem – Prove your identity – GOV.UK
-#    And The test is complete and I close the driver
+  @build @staging @integration @stub @uat
+  Scenario: Check the Unrecoverable error/ Unknown error in Passport CRI
+    Given I delete the service_session cookie to get the unexpected error
+    When I check the page title is Sorry, there is a problem – GOV.UK One Login
+    And The test is complete and I close the driver
 
   @build @Language-regression
   Scenario Outline: Language Title validation
     Given User clicks on language toggle and switches to Welsh
-    Then I check the page title is Rhowch eich manylion yn union fel maent yn ymddangos ar eich pasbort y DU – Profi pwy ydych chi – GOV.UK
+    Then I check the page title is Rhowch eich manylion yn union fel maent yn ymddangos ar eich pasbort y DU – GOV.UK One Login
     Then User enters data as a <PassportSubject>
     When User clicks on continue
     Then I navigate to the passport verifiable issuer to check for a Valid response
@@ -242,7 +241,7 @@ Feature: Passport Test
 
   @build @stub
   Scenario Outline: Error tab title validation
-    And I check the page title is Enter your details exactly as they appear on your UK passport – Prove your identity – GOV.UK
+    And I check the page title is Enter your details exactly as they appear on your UK passport – GOV.UK One Login
     Then User enters data as a <PassportSubject>
     And User re-enters passport number as <InvalidPassportNumber>
     And User re-enters last name as <InvalidLastName>
@@ -254,7 +253,7 @@ Feature: Passport Test
     And User re-enters valid to month as <InvalidValidToMonth>
     And User re-enters valid to year as <InvalidValidToYear>
     And User clicks on continue
-    Then I check the page title is Error: Enter your details exactly as they appear on your UK passport – Prove your identity – GOV.UK
+    Then I check the page title is Error: Enter your details exactly as they appear on your UK passport – GOV.UK One Login
     And The test is complete and I close the driver
     Examples:
       | PassportSubject             | InvalidPassportNumber | InvalidLastName | InvalidFirstName | InvalidBirthDay | InvalidBirthMonth | InvalidBirthYear | InvalidValidToDay | InvalidValidToMonth | InvalidValidToYear | Scenario                              |
