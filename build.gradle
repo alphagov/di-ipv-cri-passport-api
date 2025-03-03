@@ -52,7 +52,7 @@ ext {
 		aspectjrt_version                          : "1.9.22.1",
 
 		// Open telemetry
-		opentelemetry_bom_alpha_version  : "2.12.0-alpha",
+		opentelemetry_bom_alpha_version  : "2.13.3-alpha",
 
 		// CRI Apache HTTP Client see https://hc.apache.org/httpcomponents-client-4.5.x/current/httpclient/dependencies.html
 		httpcomponents_core_version        : "4.4.16",
