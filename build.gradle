@@ -61,7 +61,7 @@ ext {
 		// Test
 		junit_version                      : "5.11.4",
 		hamcrest_version                   : "2.2",
-		mockito_version                    : "5.15.2",
+		mockito_version                    : "5.16.0",
 		wiremock_version                   : "3.0.1",
 		webcompere_version                 : "2.1.6",
 
